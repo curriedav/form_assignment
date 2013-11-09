@@ -80,50 +80,78 @@
 
 
       <!-- Modify the form tag to work properly with the CGI script. Look at the example form for guidance. -->
-      <form>
+      <form action="http:form-echo.herokuapp.com/form-echo" method="POST">
         
         <!-- Use a hidden field to set the subject -->
+        <input type="hidden" name="form" value="feedbackForm">
 
         <p class="prompt_text">Thank you for using our product. Please give us feedback.</p>
 
         <!-- put the first three fields here. Use a table to make alignment easier -->
+        <table>
+          <tr>
+            <td>
+              Your email: 
+            </td>
+            <td>
+              <input type="text" name="email" value="me@example.com">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Your name: 
+            </td>
+            <td>
+              <input type="text" name="name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Your phone: 
+            </td>
+            <td>
+              <input type="text" name="phone" value="(555)555-5555">
+            </td>
+          </tr>
+        </table>
         
-        <p>Some fields go here</p>
           
         <p class="prompt_text">What sort of feedback do you want to give us?</p>
 
         <!-- put the radio button fields here. -->
 
-        <p>Some radio buttons go here</p>
+        <input type="radio" name="feedback_type" value="problem">I found a problem.<br>
+        <input type="radio" name="feedback_type" value="negative">I want to give negative feedback.<br>
+        <input type="radio" name="feedback_type" value="positive">I want to give positive feedback.<br>
 
         <p class="prompt_text">How would you like us to respond?</p>
 
         <!-- put the checkbox fields here. -->
 
-        <p>Some checkboxes go here</p>
+        <input type="checkbox" name="response_type" value="phone">Call me.<br>
+        <input type="checkbox" name="response_type" value="email">Send me an email.
 
         <p class="prompt_text">What is your message?</p>
 
         <!-- put the textarea field here. -->
 
-        <p>A text area field goes here</p>
-
-        <p class="prompt_text">What is your zip code?</p>
+        <textarea name="message" rows="7" cols="50"></textarea>
 
         <!-- put the zipcode field here. -->
+        
+        <p class="prompt_text">Please give us your zipcode: <input type="text" name="zipcode"></p>
 
-        <p>A text area field for zip codes goes here</p>
-
-        <p>a link and a button go here, using a class that floats them to the right.</p>
-
-            
+        <div class="validation_badge">
+          <a href="http://www.portlandcodeschool.com">Never Mind.</a>
+          <input type="submit" value="Send us feedback">
+        </div>     
       </form>
 
       <!-- the footer area sits at the bottom of the page under the form. -->
 
       <div class="footer">
         <!-- edit the footer to include your name  -->
-       Copyright &copy; 2013 <i>Student Name</i>
+       Copyright &copy; 2013 <i>Shawna &amp; David</i>
       </div>
     </div>  <!-- .container -->
 
